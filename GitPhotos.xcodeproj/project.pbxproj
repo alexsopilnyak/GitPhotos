@@ -57,6 +57,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5A64F5D25E407EB009A61A0 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				E5FD83BA25E28F110072C2A1 /* Request.swift */,
+				E5FD841625E406310072C2A1 /* RepositoryFilesRequest.swift */,
+				E5FD83BD25E294AF0072C2A1 /* AuthCodeRequest.swift */,
+				E5FD83C225E2AE910072C2A1 /* UserTokenRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		E5C59C6625E265B1000D4161 = {
 			isa = PBXGroup;
 			children = (
@@ -96,21 +107,10 @@
 		E5FD83B325E28BBA0072C2A1 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				E5FD83BA25E28F110072C2A1 /* Request.swift */,
-				E5FD841625E406310072C2A1 /* RepositoryFilesRequest.swift */,
-				E5FD83BD25E294AF0072C2A1 /* AuthCodeRequest.swift */,
-				E5FD83C225E2AE910072C2A1 /* UserTokenRequest.swift */,
-				E5FD841B25E406A60072C2A1 /* New Group */,
+				E5A64F5D25E407EB009A61A0 /* Requests */,
 				E5FD83B425E28BD80072C2A1 /* NetworkService.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		E5FD841B25E406A60072C2A1 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
