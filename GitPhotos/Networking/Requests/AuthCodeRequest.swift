@@ -18,7 +18,6 @@ struct AuthCodeRequest: Request {
     guard let url = makeURLWithParameters() else { return nil }
     
     var request = URLRequest(url: url)
-    request.allHTTPHeaderFields = headers
     request.httpMethod = method.rawValue
     return request
   }

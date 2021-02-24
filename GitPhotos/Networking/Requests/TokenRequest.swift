@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct UserTokenRequest: Request {
+struct TokenRequest: Request {
   var url: URL
   var method: RequestMethod
   var parameters: TokenParameters
@@ -18,7 +18,6 @@ struct UserTokenRequest: Request {
     guard let url = makeURLWithParameters() else { return nil }
     var request = URLRequest(url: url)
     request.httpMethod = method.rawValue
-    request.allHTTPHeaderFields = headers
     setHeadersIn(&request)
     return request
   }

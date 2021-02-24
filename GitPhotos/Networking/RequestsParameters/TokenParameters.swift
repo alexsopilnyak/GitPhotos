@@ -13,6 +13,7 @@ struct TokenParameters: Encodable {
   let redirectURI: URL
   let state: String
   let code: String
+  let grantType: String
   
   private enum CodingKeys: String, CodingKey {
     case clientID = "client_id"
@@ -20,14 +21,8 @@ struct TokenParameters: Encodable {
     case redirectURI = "redirect_uri"
     case state
     case code
+    case grantType = "grant_type"
   }
 }
 
 
-struct Token: Decodable {
-  let accessToken: String
-  
-  private enum CodingKeys: String, CodingKey {
-    case accessToken = "access_token"
-  }
-}

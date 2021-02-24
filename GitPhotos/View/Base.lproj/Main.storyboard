@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5oV-eF-KIf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="GitPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mrO-ZF-UvO"/>
+                    <connections>
+                        <segue destination="qdE-Pm-vTy" kind="show" identifier="toRepositoryFiles" id="EdE-y5-5Kn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910.14492753623199" y="112.5"/>
+        </scene>
+        <!--Repository List View Controller-->
+        <scene sceneID="T2L-gU-AdC">
+            <objects>
+                <viewController storyboardIdentifier="RepositoryListViewController" id="qdE-Pm-vTy" customClass="RepositoryListViewController" customModule="GitPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2iM-fF-18S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ljf-89-tUr">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XP4-FI-DEJ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DefaultCollectionViewCell" id="ajt-IW-q2L" customClass="DefaultCollectionViewCell" customModule="GitPhotos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="exC-0e-W0M">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nNY-Dr-Jak"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ljf-89-tUr" firstAttribute="top" secondItem="nNY-Dr-Jak" secondAttribute="top" id="AVu-aU-NgS"/>
+                            <constraint firstItem="ljf-89-tUr" firstAttribute="leading" secondItem="nNY-Dr-Jak" secondAttribute="leading" id="Dhz-ue-wLO"/>
+                            <constraint firstItem="nNY-Dr-Jak" firstAttribute="bottom" secondItem="ljf-89-tUr" secondAttribute="bottom" id="FAd-ag-09A"/>
+                            <constraint firstItem="nNY-Dr-Jak" firstAttribute="trailing" secondItem="ljf-89-tUr" secondAttribute="trailing" id="zZt-22-vlb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="26m-ij-l8V"/>
+                    <connections>
+                        <outlet property="collectionView" destination="ljf-89-tUr" id="Vqp-ab-W9Z"/>
+                        <segue destination="q6X-2o-sEE" kind="show" identifier="toDetailVC" id="knD-ja-CrN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROM-ii-zOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1683" y="113"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="JaQ-IM-dqj">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="q6X-2o-sEE" customClass="DetailViewController" customModule="GitPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rvM-A1-Iao">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnh-Zf-Hrm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HQL-gF-tjt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tnh-Zf-Hrm" firstAttribute="leading" secondItem="HQL-gF-tjt" secondAttribute="leading" id="0Uu-IU-WUt"/>
+                            <constraint firstItem="HQL-gF-tjt" firstAttribute="trailing" secondItem="tnh-Zf-Hrm" secondAttribute="trailing" id="6Rn-3D-s4s"/>
+                            <constraint firstItem="tnh-Zf-Hrm" firstAttribute="top" secondItem="HQL-gF-tjt" secondAttribute="top" id="YTw-ve-cFr"/>
+                            <constraint firstItem="HQL-gF-tjt" firstAttribute="bottom" secondItem="tnh-Zf-Hrm" secondAttribute="bottom" id="hbs-Zh-Ru0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jlq-cG-9qe"/>
+                    <connections>
+                        <outlet property="imageView" destination="tnh-Zf-Hrm" id="5B2-bs-Zh1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0qp-lN-9cN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2554" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DOW-ja-m5z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5oV-eF-KIf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bdv-2I-gvn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="a7l-FH-4Vo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hg0-gQ-Q0C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
